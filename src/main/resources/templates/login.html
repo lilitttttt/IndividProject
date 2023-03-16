@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Авторизация</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+      body
+        {
+          background-image: url("https://phonoteka.org/uploads/posts/2022-02/1645280033_48-phonoteka-org-p-cherno-krasnii-fon-anime-58.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+
+    </style>
+
+</head>
+
+<body>
+<div style="width: 38%; margin: auto; margin-top: 300px; background-color: #FFA07A; border-radius: 25px; padding: 10px; box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);">
+    <div style="width: 40%; margin: auto;">
+        <div th:if="${param.error}">
+            <p>Неправильный никнейм или пароль.</p>
+        </div>
+
+        <div th:if="${param.logout}">
+            <p> Вы вышли</p>
+        </div>
+
+        <form th:action="@{/login}" method="post">
+            <div><label> Логин: <input type="text"  name="username"/></label></div>
+            <div><label> Пароль: <input type="password"  name="password"/></label></div>
+            <div><input type="submit"
+                        value="Войти"/></div>
+            <br>
+
+        </form>
+        <form action="/registration">
+            <input class="button" type="submit" value="Регистрация"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

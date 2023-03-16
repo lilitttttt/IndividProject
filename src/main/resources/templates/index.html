@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Главная страница</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+      body
+        {
+          background-image: url("https://phonoteka.org/uploads/posts/2022-02/1645280033_48-phonoteka-org-p-cherno-krasnii-fon-anime-58.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+
+    </style>
+
+</head>
+
+<body>
+<div th:insert="blocks/header"></div>
+<form >
+    <div class="header__nav-links">
+        <a class="links other-link" style="font-size: 38px; margin: 15px;" href="/profile/details"
+           sec:authorize="hasAuthority('USER') or hasAuthority('CLIENT')">Информация</a>
+    </div>
+    <div class="page">
+        <header class="header">
+            <h1 class="header__title" style="margin: auto; background-color: #FFA07A;" >Разработка индивидуальных программных продуктов</h1>
+        </header>
+
+
+    </div>
+</form>
+</body>
+</html>
